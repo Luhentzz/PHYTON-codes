@@ -1,0 +1,41 @@
+nome = ''
+politica = ''
+renda_baixa = 0 
+renda_alta = 0
+renda_mediana = 0
+contador = 0 
+contador2 = 0
+salario = 0 
+acumula_baixo = 0
+acumula_alto= 0 
+acumula_sala = 0
+
+while nome != 'sair':
+    nome = input('Digite o seu nome (caso deseje sair digite sair) : ')
+    nome = nome.lower()
+    if nome != 'sair':
+        contador = contador + 1
+        politica = input('Você concorda com as políticas de privacidade do site? S/N : ')
+        politica = politica.upper()
+        if politica == 'S':
+            contador2 = contador2 + 1 
+        salario = float(input('Insira o valor de seu salário : '))
+        acumula_sala = acumula_sala + salario
+        if salario < 600:
+            renda_baixo = renda_baixa + 1 
+            acumula_baixo = acumula_baixo + salario
+        if salario > 600 and salario < 4000:
+            renda_mediana = renda_mediana + 1
+        if salario > 4000:
+            renda_alta = renda_alta + 1 
+            acumula_alto = acumula_alto + salario
+            
+else:
+    print('Este é o total de pssoas que responderam ao questionário : ', contador)
+    print('Este é o total de pssoas que responderam ao questionário e concordam com as políticas do site : ', contador2)
+    print('Este é o total de pssoas que responderam ao questionário e possuem renda baixa : ', renda_baixa)
+    print('Este é o total de pssoas que responderam ao questionário e possuem renda renda mediana : ', renda_mediana)
+    print('Este é o total de pssoas que responderam ao questionário e possuem renda alta : ', renda_alta)
+    print('Esta é a soma de todos os salários da renda baixa : ', acumula_baixo)
+    print('Esta é a soma de todos os salários da renda alta : ', acumula_alto)
+    print('Esta é a soma de todos os salários juntos : ', acumula_sala)
