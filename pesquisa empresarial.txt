@@ -1,0 +1,27 @@
+nome = ''
+sexo = ''
+masculino = 0
+feminino = 0
+salario = 0
+salarioM = 0
+salarioF = 0
+
+while nome != 'sair':
+    nome = input('Insira o seu nome (digite sair caso deseje encerrar) : ')
+    nome = nome.lower()
+    if nome != 'sair':
+        sexo = input('Insira seu sexo : ')
+        sexo = sexo.lower()
+        salario = float(input('Informe o valor de seu salário : '))
+        if sexo == 'masculino':
+            masculino = masculino + 1
+            salarioM = salarioM + salario
+        if sexo == 'feminino':
+            feminino = feminino + 1 
+            salarioF = salarioF + salario
+    
+else:
+    print('Estes são o total de pessoas do sexo masculino : ',masculino)
+    print('Estes são o total de pessoas do sexo feminino : ',feminino)
+    print('Esta é a soma dos salários dos homens : ',salarioM)
+    print('Esta é a soma dos salários das mulheres : ',salarioF)
